@@ -11,7 +11,7 @@ int main() {
 }
 
 long long int fp(long long int x, long long int y, long long int p) {
-    int res=1;
+    long long int res=1;
     while (y!=0 ){
         if(y%2==1){
             res*=x;
