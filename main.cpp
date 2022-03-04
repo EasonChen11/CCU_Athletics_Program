@@ -1,7 +1,8 @@
 #include <iostream>
 
 using namespace std;
+using namespace std;
 int main() {
-    cout << "this is master!" << std::endl;
+    cout <<"this is master";
     return 0;
 }
