@@ -14,9 +14,8 @@ int ExGCD(int a,int b,int &x,int &y){
 }
 int main() {
     int a,b,x,y;
-    a=23;
-    b=9;
+    cin>>a>>b;
     ExGCD(a,b,x,y);
-    cerr<<"ax+by = "<<a*x+b*y <<endl;
+    cerr<<x<<
     return 0;
 }
