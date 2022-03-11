@@ -16,6 +16,8 @@ int main() {
     int a,b,x,y;
     cin>>a>>b;
     ExGCD(a,b,x,y);
-    cerr<<x<<
+    if(x<0)
+        x+=b;
+    cout<<x;
     return 0;
 }
