@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 typedef struct CycleAndTiming{
-    int t,d;
+    int m,d;
 };
 int ExGCD(int a,int b,int &x,int &y){
     if(b==0){
@@ -20,16 +20,15 @@ int main() {
     cin>>n;
     CycleAndTiming list[5]={0,0};
     for (int i = 0; i < n; ++i) {
-        cin>>list[i].t>>list[i].d;
-        M*=list[i].t;
+        cin>>list[i].m>>list[i].d;
+        M*=list[i].m;
     }
     for (int i = 0; i < n; ++i) {
-        ExGCD(list[i].d,list[i].t,x,y);
+        ExGCD(M/list[i].m,list[i].m,x,y);
         if (x<0)
-            x+=list[i].t;
-        X+=list[i].d*x*(M/list[i].t);
-        cerr<<M/list[i].t<<"*"<<x<<" "<<list[i].t<<endl;
+            x+=list[i].m;
+        X+=list[i].d*x*(M/list[i].m);
     }
-    //cout<<X;
+    cout<<X%M;
     return 0;
 }
