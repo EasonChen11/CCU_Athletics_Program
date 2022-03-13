@@ -23,16 +23,15 @@ int main() {
 }
 
 map < long long int, int > prime_number_separate(long long int k) {
-    const long long int x=k;
+    const double x=sqrt(k);
+    const long long int save=k;
     map<long long int,int> prime_number_times;
     prime_number_times.clear();
-    for (long long int i = 2; i <= x; ++i) {
-        if(k==1)
-            break;
-            while (k%i==0){
-                k/=i;
-                prime_number_times[i]++;
-            }
+    for (long long int i = 2; i <= k; ++i) {
+        while (k%i==0){
+            k/=i;
+            prime_number_times[i]++;
+        }
     }
     return prime_number_times;
 }
