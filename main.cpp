@@ -29,21 +29,19 @@ map < long long int, int > prime_number_separate(long long int k) {
     for (long long int i = 2; i <= x; ++i) {
         if(k==1)
             break;
-        if(prime_number(i)){
             while (k%i==0){
                 k/=i;
                 prime_number_times[i]++;
             }
-        }
     }
     return prime_number_times;
 }
 
-bool prime_number(long long int i) {
+/*bool prime_number(long long int i) {
     double d= sqrt(i);
     for (long long int j = 2; j <= d; ++j) {
         if(i%j==0)
             return false;
     }
     return true;
-}
+}*/
