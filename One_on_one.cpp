@@ -25,6 +25,6 @@ int win_number(int * enemies, int enemies_number, int * soldiers, int soldiers_n
     } else if(enemies[enemies_number]>soldiers[soldiers_number]){
         return win_number(enemies,enemies_number,soldiers,soldiers_number+1,n,win);
     } else{
-        return win_number(enemies,enemies_number+1,soldiers,soldiers_number+1,n,win);
+        return win_number(enemies,enemies_number,soldiers,soldiers_number+1,n,win);
     }
 }
