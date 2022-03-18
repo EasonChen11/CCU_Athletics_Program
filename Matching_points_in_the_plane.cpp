@@ -1,18 +1,32 @@
 #include <iostream>
 #include <algorithm>
 #include <cmath>
+#include <sstream>
+#include <string>
+#include <vector>
 using namespace std;
 
 int main(){
     int n;
     cin>>n;
+    cin.ignore();
     while (n-- ){
-        double x[2],y[2],try1,try2;
-        cin>>x[0]>>x[1]>>y[0]>>y[1];
-        //cout<<x[0]
-        try1=pow(pow(x[0],2)+ pow(y[0],2),0.5) + pow(pow(x[1],2)+ pow(y[1],2),0.5);
-        try2=pow(pow(x[0],2)+ pow(y[1],2),0.5) + pow(pow(x[1],2)+ pow(y[0],2),0.5);
-        cout<<try1<<" "<<try2<<endl;
-        cout<<(int) max(try1,try2)<<endl;
+        string sx,sy;
+        getline(cin,sx);
+        getline(cin,sy);
+        stringstream ssx(sx),ssy(sy);
+        vector<int> x,y;
+        int tempx ,tempy;
+        while (ssx>>tempx,ssy>>tempy ){
+            x.push_back(tempx);
+            y.push_back(tempy);
+        }
+        sort(x.begin(),x.end(),greater<int>());
+        sort(y.begin(),y.end(),less<int>());
+        double sum=0;
+        for (int i=0;i<x.size();i++) {
+            sum+= sqrt(pow(x[i],2)+ pow(y[i],2));
+        }
+        cout<<(long long int)sum<<endl;
     }
 }
