@@ -23,10 +23,21 @@ int main(){
         }
         sort(x.begin(),x.end(),greater<int>());
         sort(y.begin(),y.end(),less<int>());
-        double sum=0;
+        double sum1=0;
+        long long int l1;
         for (int i=0;i<x.size();i++) {
-            sum+= sqrt(pow(x[i],2)+ pow(y[i],2));
+            l1=pow(x[i],2)+ pow(y[i],2);
+            sum1+= sqrtl(l1);
         }
-        cout<<(long long int)sum<<endl;
+
+        sort(x.begin(),x.end(),less<int>());
+        sort(y.begin(),y.end(),greater<int>());
+        double sum2=0;
+        long long int l2;
+        for (int i=0;i<x.size();i++) {
+            l2=pow(x[i],2)+ pow(y[i],2);
+            sum2+= sqrtl(l2);
+        }
+        cout<<(long long int) max(sum1,sum2)<<endl;
     }
 }
