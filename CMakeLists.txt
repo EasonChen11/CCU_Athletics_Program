@@ -9,4 +9,5 @@ add_executable(greedy1_C Deadline_deadline_and_deadline.cpp)
 add_executable(greedy1_D Matching_points_in_the_plane.cpp)
 add_executable(greedy2_A The_principle_of_non_renewal_of_trial.cpp)
 add_executable(greedy2_B Scheduling_on_many_machines.cpp)
+add_executable(greedy2_C First_Come_First_Serve_with_deadline.cpp)
 
