@@ -1,6 +1,6 @@
 #include <iostream>
 #include <algorithm>
-//#include <queue>
+#include <queue>
 //#include <cstdlib>
 using namespace std;
 //想法:
@@ -20,14 +20,30 @@ int main(){
         cin>>Case_number>>machines_number;
         long long int Case_time;
         //long long int *machines_time = (long long int*)calloc(machines_number,sizeof (long long int));
-        long long int machines_time[100000]={0};
-        for (int i = 0; i < Case_number; ++i) {
+        //long long int machines_time[100000]={0};
+        /*for (int i = 0; i < Case_number; ++i) {
             cin>>Case_time;
             machines_time[0]+=Case_time;
             //qsort(machines_time,machines_number, sizeof(long long int ),compare);
             sort(machines_time,machines_time+machines_number);
         }
         cout<<machines_time[machines_number-1]<<endl;
-        //free(machines_time);
+        //free(machines_time);*/
+        priority_queue<long long int ,vector<long long int>,greater<long long int>> pq;
+        while (pq.size()!= machines_number ){
+            pq.push(0);
+        }
+        for (int i = 0; i < Case_number; ++i) {
+            cin>>Case_time;
+            long long int save=pq.top();
+            save+=Case_time;
+            pq.pop();
+            pq.push(save);
+        }
+        while(pq.empty()==0){
+            if(pq.size()==1)
+                cout<<pq.top()<<endl;
+            pq.pop();
+        }
     }
 }
