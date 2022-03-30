@@ -1,9 +1,8 @@
 //想法:
 //試一台機器到N台機器(最多N台)
+//用二分搜一半可以往前直到不行往後
+//直到找到最小機台數
 //如果N台都不行輸出-1
-//不可以是0可以是1
-//{0,0,0,1,1,1,1....}
-//用二分搜找第一個1
 #include <iostream>
 #include <vector>
 #include <queue>
@@ -48,7 +47,7 @@ int main()
             cin >> x;
             max_time = max(x, max_time);
         }
-        if (max_time > deadline)
+        if (max_time > deadline)    //失敗條件:如果有一個job時間>deadline，再多機器都不可能完成
         {
             cout << "-1\n";
             continue;
