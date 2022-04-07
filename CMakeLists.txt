@@ -3,4 +3,4 @@ project(CCU_Athletics_Program)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(CCU_Athletics_Program main.cpp)
+add_executable(graph1_A graph1/Connected_Components.cpp)
