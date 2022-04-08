@@ -31,8 +31,6 @@ int main() {
             visit[node]=true;
             ans[i]+=points[node];
             for(auto x:root[node]){
-                if(visit[x])
-                    continue;
                 st.push(x);
             }
         }
