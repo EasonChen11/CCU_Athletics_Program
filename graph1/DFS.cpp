@@ -27,26 +27,16 @@ int main(){
         roots[link.second-1].r.push_back(link.first-1);
 
     }
-    for(auto x:roots){
-        sort(x.r.begin(),x.r.end(),[&](int a,int b){
+    for(int i=0;i<point;i++){
+        sort(roots[i].r.begin(),roots[i].r.end(),[&](int a,int b){
             if(roots[a].weight!=roots[b].weight){
-                if(roots[a].weight<roots[b].weight)
-                    return 1;
-                else
-                    return 0;
+                return roots[a].weight>roots[b].weight;
             }
             else {
-                if(a>b)
-                    return 1;
-                else
-                    return 0;
+                return a>b;
             }
         });
     }
-    for(auto x:roots){
-        for(auto y:x.r){
-        cout<<y<<" ";}
-    cout<<endl;}
     stack<int> st;
     st.push(root-1);
     while ( !st.empty()){
