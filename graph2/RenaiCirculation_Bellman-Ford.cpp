@@ -17,30 +17,20 @@ int main(){
     }
     vector<ll> far(n+1,INF);
     far[1]=0;
-    priority_queue<ll> pq;
-    bool changed;
-    while(++times<n){
-        pq.push(1);
+    bool changed= true;
+    while(changed && times++<=n-1){
         changed= false;
-        while (!pq.empty()){
-            ll locate=pq.top();
-            pq.pop();
-            for(auto x:link[locate]){
-                if(far[x.first]!=INF)
-                    pq.push(x.first);
-                if(far[x.first]>far[locate]+x.second){
-                    far[x.first]=far[locate]+x.second;
+        for (int i = 0; i <= n; ++i) {
+            for(auto x:link[i]){
+                if(far[x.first]>far[i]+x.second){
+                    far[x.first]=far[i]+x.second;
                     changed= true;
                 }
             }
         }
-        if(!changed)
-            break;
     }
-    if(times==n && !changed)
+    if(times<=n-1)
         cout<<"YES\n";
-    else if(times==n && changed)
-        cout<<"NO\n";
     else
-        cout<<"YES\n";
+        cout<<"NO\n";
 }
