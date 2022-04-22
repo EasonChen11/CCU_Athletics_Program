@@ -16,3 +16,4 @@ add_executable(graph2_C graph2/Floyd_Warshall.cpp)
 
 add_executable(graph3_A graph3/Build-airport.cpp)
 add_executable(graph3_B graph3/Road_Reparation.cpp)
+add_executable(graph3_C graph3/Tree_Center.cpp)
