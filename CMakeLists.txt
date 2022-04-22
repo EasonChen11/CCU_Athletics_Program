@@ -13,3 +13,5 @@ add_executable(graph1_D graph1/BFS.cpp)
 add_executable(graph2_A graph2/Dijkstra.cpp)
 add_executable(graph2_B graph2/RenaiCirculation_Bellman-Ford.cpp)
 add_executable(graph2_C graph2/Floyd_Warshall.cpp)
+
+add_executable(graph3_A graph3/Build-airport.cpp)
