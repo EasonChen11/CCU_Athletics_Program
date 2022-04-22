@@ -12,7 +12,7 @@ public:
     int Finds(int x){
         if(parent[x]==x)
             return x;
-        return parent[x]= Finds(parent[x]);
+        return parent[x]= Finds(parent[x]);//尋找father
     }
     void Union(int a,int b){
         int x= Finds(a);
@@ -22,7 +22,7 @@ public:
         if(Size[x]>Size[y])
             swap(x,y);
         parent[x]=parent[y];
-        Size[y]+=Size[x];
+        Size[y]+=Size[x];//往大的樹加
     }
 };
 int main() {
