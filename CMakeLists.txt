@@ -3,4 +3,4 @@ project(CCU_Athletics_Program)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(CCU_Athletics_Program main.cpp)
+add_executable(DP1_1 Prefix_Sum.cpp)
