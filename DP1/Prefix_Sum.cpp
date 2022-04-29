@@ -8,7 +8,7 @@ int main() {
     for (ll i = 1; i <= n; ++i) {
         ll save;
         cin>>save;
-        Sum[i]=save+Sum[i-1];
+        Sum[i]=Sum[i-1]+save;//S(n)=S(n-1)+a(n)
     }
     for (ll i = 0; i < p; ++i) {
         pair<ll,ll> save;
